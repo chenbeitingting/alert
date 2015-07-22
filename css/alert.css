@@ -1,0 +1,18 @@
+/*alert框的样式表*/
+.window_boundingBox{z-index: 100;background-color: #fff; border: 1px solid #fff; position: fixed; border-radius: 4px;left: 50%; top: 50%; color: #ababab; font-size: 15px; font-family: "微软雅黑";}
+.widnow_header{ text-align: center; height: 44px;line-height: 44px; vertical-align: middle;}
+.window_body{ width: 100%; text-align: center; margin-top: 20px;}
+.onebutton,.twobutton{position: absolute; bottom: 10px; text-align: center;width: 100%;} 
+.onebutton a{width: 80%;background-color: #FF6191; border-radius: 4px; display: inline-block;height: 34px; line-height:34px; vertical-align: middle; color: white;}
+.twobutton a{width:35%; border-radius: 4px; display: inline-block;height: 34px; line-height:34px; vertical-align: middle; }
+.twobutton a:nth-child(1){background-color: #eee;color: white;margin-right:10%; }
+.twobutton a:nth-child(2){background-color: #FF6191;color: white;}
+.window_mask{ position: fixed; top: 0px;left: 0px; right: 0px; bottom: 0px; background-color: #000; opacity: 0.6;z-index: 2;}
+
+/*laoding样式表*/
+.load_bg{position: fixed; top: 0px;left: 0px; right: 0px; bottom: 0px; background-color: #000; opacity: 0.6;z-index: 2; text-align: center;}
+.load_bg img{ top: 48%; position: absolute;}
+
+/*底部滑出提示语*/
+.Slidertip{ position: absolute;height: 50px; line-height: 50px; background-color: #000;opacity: 0.6;bottom: -60px;
+	vertical-align: middle; width: 100%; color: white; font-weight: bold; text-align: center;transition: bottom 2s ease 0s;}

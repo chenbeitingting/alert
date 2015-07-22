@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+	<title>弹出框组件</title>
+	<link rel="stylesheet" type="text/css" href="css/alert.css">
+	<style type="text/css">
+         body{background-color: #eee;}
+         .curent{background-color: green; height: 60px;}
+         .later{background-color: red;}
+	</style>
+</head>
+<body>
+<div class="curent" id="test">惦记我</div>
+<div id="val">惦记我</div>
+<script type="text/javascript" src="js/require.js"></script>
+<script type="text/javascript">
+	require.config({
+		 paths:{
+		 	jquery:'js/jquery-1.8.0.min',
+		 	WinAlert:"js/alert",
+		 	changBg:'js/changBg',
+		 	touch:'js/touchwipe'
+		 }
+	});
+	require(['jquery','WinAlert','changBg','touch'],function($,w,c,t){
+      /*  new w.Widnow().alert({
+        	   width:400,//弹出框宽度
+           	   height:200,//弹出框高度
+           	   title:'提示',//弹出框标题
+           	   content:'搓出来',//弹出框内容
+           	   hasMask:true,//添加遮罩层
+           	   buttons:[
+           	      {
+           	      	 butName:'取消',
+           	         handler:function(){
+                         
+           	         }
+           	      },
+           	      { 
+           	         butName:'确定',
+           	         handler:function(){
+                        
+           	         }
+           	      }
+           	   ]//按钮
+        });*/
+
+//loading加载
+	/*
+	    new w.Widnow().loading();
+
+	    setTimeout(function(){
+	    	  new w.Widnow().removeLoading();
+	    },3000);*/
+    
+      //	new w.Widnow().sliderTip("已经成功啦");//从下方弹出提示框
+
+//点击按钮时更换背景色
+
+   /*    $("div").click(function(event) {
+       	   new c.changbg().init({
+       	   	      target:$("div"),
+	              currentClass:'curent',
+	              laterClass:'later',
+	              callback:function(){
+	              	  alert("出发了");
+	              }
+       	   });
+       });*/
+
+       $("#test").touchwipe({
+     			min_move_x: 40, //横向灵敏度
+     			min_move_y: 40, //纵向灵敏度
+     			wipeLeft: function() {
+                  console.log(0);
+     			    $("#val").append("左，");}, //左侧滑动事件
+     			wipeRight: function() { 
+     			   $("#val").append("右，");
+                   console.log(1);
+     			}, //右侧滑动事件
+     			wipeUp: function() { $("#val").append("上，");}, //向上滑动事件
+     			wipeDown: function() { $("#val").append("下，");}, //向下滑动事件
+     			wipe:function(){$("#val").append("点击，");}, //触摸事件
+     			wipehold:function(){$("#val").append("保持，");}, //触摸保持事件
+     			preventDefaultEvents: true //阻止默认事件
+ 		});
+	});
+</script>
+</body>
+</html>
